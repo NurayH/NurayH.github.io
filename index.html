@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuray Humbatova - Realtor</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?display=swap&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,400;1,400"
+          rel="stylesheet" type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,8 +15,8 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: "Source Sans 3", sans-serif;
+            background: #F0EDE6;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -30,19 +32,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
             background-size: 50px 50px;
-            opacity: 0.3;
+            opacity: 0.1;
+            background: url("/img/background.svg") repeat;
+            z-index: -1;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
+            /*background: rgba(255, 255, 255, 0.4);*/
+            background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.6));
+            border-radius: 20px;
             padding: 40px;
-            max-width: 800px;
+            max-width: 1200px;
             width: 100%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 80px rgba(255, 255, 255, 0.1);
+            box-shadow: 0rem 2.125rem 2.375rem 0rem rgba(64, 59, 52, 0.039);
             position: relative;
             z-index: 1;
             transform: translateY(0);
@@ -52,27 +55,18 @@
             gap: 40px;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 0 0 100px rgba(255, 255, 255, 0.15);
-        }
 
         .profile-section {
             flex-shrink: 0;
         }
 
         .profile-image {
-            width: 280px;
-            height: 350px;
-            border-radius: 20px;
-            object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            height: 600px;
+            border-radius: 10px;
+            border: 8px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2.125rem 2.375rem 0 rgba(64, 59, 52, 0.039);
             transition: transform 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.02);
         }
 
         .content-section {
@@ -81,28 +75,26 @@
         }
 
         .name {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4em;
+            font-weight: bold;
+            color: #97b758;
             margin-bottom: 8px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .title {
-            font-size: 1.2em;
+            font-size: 1.5em;
             color: #7f8c8d;
             margin-bottom: 25px;
             font-weight: 500;
         }
 
         .bio {
-            color: #34495e;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            font-size: 1em;
+            color: rgb(99, 108, 95);
+            line-height: 1.875;
+            margin-bottom: 50px;
+            font-size: 1.1em;
+            font-weight: 400;
         }
 
         .social-links {
@@ -148,10 +140,25 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .linkedin { background: linear-gradient(135deg, #0077b5, #00a0dc); }
-        .twitter { background: linear-gradient(135deg, #1da1f2, #0d8bd9); }
-        .instagram { background: linear-gradient(135deg, #e4405f, #833ab4); }
-        .github { background: linear-gradient(135deg, #333, #555); }
+        .linkedin {
+            background: linear-gradient(135deg, #0077b5, #00a0dc);
+        }
+
+        .x-twitter {
+            background: linear-gradient(135deg, #000000, #333333);
+        }
+
+        .instagram {
+            background: linear-gradient(135deg, #e4405f, #833ab4);
+        }
+
+        .facebook {
+            background: linear-gradient(135deg, #1877f2, #42a5f5);
+        }
+
+        .whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+        }
 
         .contact-buttons {
             display: flex;
@@ -163,7 +170,7 @@
         .btn {
             padding: 12px 25px;
             border: none;
-            border-radius: 25px;
+            border-radius: 15px;
             font-size: 1em;
             font-weight: 600;
             text-decoration: none;
@@ -183,8 +190,6 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
         }
 
         .btn:hover::before {
@@ -192,55 +197,20 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            /*background-image: linear-gradient(235deg, #3c403f 0%, #5e6362 100%);*/
+            background-color: #5e6362;
+            color: #fff;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: scale(1.04);
         }
 
         .btn-secondary {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            color: #495057;
-            border: 2px solid #dee2e6;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #e6e6e6;
+            color: #333;
+            border: 2px solid #ccc;
         }
-
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            background: linear-gradient(135deg, #e9ecef, #dee2e6);
-        }
-
-        .floating-particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
-        .particle:nth-child(3) { left: 80%; animation-delay: 2s; }
-        .particle:nth-child(4) { left: 90%; animation-delay: 3s; }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -330,49 +300,90 @@
                 height: 220px;
             }
         }
+
+
+        /* Page load animations */
+        .profile-image {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .name {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .title {
+            animation: fadeInUp 1s ease-out 0.1s both;
+        }
+
+        .bio {
+            animation: fadeInUp 1s ease-out 0.1s both;
+        }
+
+        .social-links {
+            animation: fadeInUp 0.5s ease-in 0.1s both;
+        }
+
+        .contact-buttons {
+            animation: slideInRight 0.5s ease-in 0.1s both;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(10px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-10px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
-<div class="floating-particles">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-</div>
-
 <div class="card">
     <div class="profile-section">
-        <img src="/img/profile.jpg" alt="Nuray" class="profile-image">
+        <img src="https://nurayh.github.io/img/profile.jpg" alt="Nuray" class="profile-image">
     </div>
     <div class="content-section">
         <h1 class="name">Nuray Humbatova</h1>
-        <p class="title">REALTOR®</p>
+        <p class="title">REALTOR® <small>at Houndstooth Property Group</small></p>
 
         <p class="bio">
-            Passionate digital marketer with 5+ years of experience in crafting compelling brand stories and driving growth through innovative marketing strategies. I help businesses thrive in the digital landscape.
+            I'm a dedicated real estate professional proudly working with Ambrosi Realty, recently recognized as the #1
+            Real Estate Company in Katy for 2025. Within Ambrosi, I’m part of the Houndstooth Property Group, a
+            collaborative team known for its client-first approach and deep local market knowledge. I focus on
+            delivering a seamless and informed real estate experience—whether you're buying, selling, or exploring your
+            options. Let’s connect and take the next step together.
         </p>
 
         <div class="social-links">
-            <a href="#" class="social-link linkedin" aria-label="LinkedIn">
+            <a href="https://www.facebook.com/nurayh" class="social-link facebook" aria-label="Facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nuray-humbatova" class="social-link linkedin" aria-label="LinkedIn" target="_blank">
                 <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="#" class="social-link twitter" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
+            <a href="#" class="social-link x-twitter" aria-label="X">
+                <i class="fab fa-x-twitter"></i>
             </a>
-            <a href="#" class="social-link instagram" aria-label="Instagram">
+            <a href="https://instagram.com/humbatova.nuray" class="social-link instagram" aria-label="Instagram" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="#" class="social-link github" aria-label="GitHub">
-                <i class="fab fa-github"></i>
+            <a href="https://wa.me/12815066976" class="social-link whatsapp" aria-label="Whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
             </a>
         </div>
 
         <div class="contact-buttons">
-            <a href="mailto:sarah.johnson@email.com" class="btn btn-primary">
+            <a href="mailto:nuray@ambrosirealty.com" class="btn btn-primary">
                 <i class="fas fa-envelope"></i>
                 Email Me
             </a>
-            <a href="tel:+1234567890" class="btn btn-secondary">
+            <a href="tel:+12815066976" class="btn btn-secondary">
                 <i class="fas fa-phone"></i>
                 Contact
             </a>
